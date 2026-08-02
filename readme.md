@@ -23,7 +23,7 @@ All detailed documentation for this project is available in the `Documentation/`
 | [GithubActionSetup.md](Documentation/GithubActionSetup.md) | Step-by-step CI/CD setup guide — SSH key generation, GitHub Secrets configuration, workflow file creation, and the deploy job definition |
 | [GitHub Actions test run.pdf](Documentation/GitHub%20Actions%20test%20run.pdf) | Live end-to-end simulation of the CI/CD pipeline — screenshots showing the bugged production state, the code push, the pipeline running, successful deployment, and the working application verified across multiple browser tabs |
 | [applicationArchitecture.drawio](Documentation/applicationArchitecture.drawio) | architecture diagram | showing Browser → Public IP → Nginx (Docker) → Backend (Docker) inside the Docker network |
-| [cicd-flow.drawio](Documentation/cicd-flow.drawio) | Editable CI/CD pipeline flow diagram | showing Developer → GitHub → GitHub Actions → SSH → Server → Live Deployment |
+| [cicd-flow.drawio](Documentation/cicd-flow.drawio) | CI/CD pipeline flow diagram | showing Developer → GitHub → GitHub Actions → SSH → Server → Live Deployment |
 
 ---
 
