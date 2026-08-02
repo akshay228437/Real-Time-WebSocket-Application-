@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="CICD Flow" id="cicd1">
-    <mxGraphModel dx="1579" dy="695" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="1058" dy="550" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -28,7 +28,7 @@
         <mxCell id="up" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="docker-compose up -d --build&#xa;(rebuild &amp; start containers)" vertex="1">
           <mxGeometry height="60" width="300" x="280" y="730" as="geometry" />
         </mxCell>
-        <mxCell id="live" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0b8299;" value="Live App Updated&#xa;http://3.108.58.172/" vertex="1">
+        <mxCell id="live" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0b8299;" value="Live App Updated" vertex="1">
           <mxGeometry height="60" width="200" x="330" y="900" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="dev" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="github">
