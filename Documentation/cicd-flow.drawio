@@ -1,0 +1,58 @@
+<mxfile host="Electron">
+  <diagram name="CICD Flow" id="cicd1">
+    <mxGraphModel dx="1579" dy="695" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dev" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Developer&#xa;(git push origin main)" vertex="1">
+          <mxGeometry height="60" width="200" x="330" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="github" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="GitHub Repository&#xa;(main branch)" vertex="1">
+          <mxGeometry height="60" width="200" x="330" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="actions" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="GitHub Actions&#xa;Workflow Triggered&#xa;(.github/workflows/deploy.yml)" vertex="1">
+          <mxGeometry height="70" width="240" x="310" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ssh" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="SSH into Production Server&#xa;(using SERVER_HOST, SERVER_USER,&#xa;SSH_PRIVATE_KEY secrets)" vertex="1">
+          <mxGeometry height="70" width="260" x="300" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="serverbox" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;fontStyle=1" value="On the Server" vertex="1">
+          <mxGeometry height="360" width="400" x="230" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="gitpull" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="git pull origin main&#xa;(fetch latest code)" vertex="1">
+          <mxGeometry height="60" width="300" x="280" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="down" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="docker-compose down&#xa;(stop old containers)" vertex="1">
+          <mxGeometry height="60" width="300" x="280" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="up" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="docker-compose up -d --build&#xa;(rebuild &amp; start containers)" vertex="1">
+          <mxGeometry height="60" width="300" x="280" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="live" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0b8299;" value="Live App Updated&#xa;http://3.108.58.172/" vertex="1">
+          <mxGeometry height="60" width="200" x="330" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="dev" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="github">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="github" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="actions" value="push event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="actions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="ssh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="ssh" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="gitpull">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="gitpull" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="down">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="down" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="up">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="up" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="live">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
