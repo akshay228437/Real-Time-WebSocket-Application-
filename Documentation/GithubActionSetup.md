@@ -123,4 +123,6 @@ Once you've added these, let me know and send me a screenshot or just confirm th
    git push
    ```
 
-5. Go to the **Actions** tab on GitHub and watch the workflow run — click into it to see live logs of the SSH connection and deploy commands executing
+5. Go to the **Actions** tab on GitHub and watch the workflow run — the SSH connection, `git pull`, `docker-compose down`, and `docker-compose up -d --build` steps will execute automatically on the server in sequence.
+
+**This completes the CI/CD setup.** From this point on, every `git push` to the `main` branch automatically triggers a deployment — GitHub Actions connects to the production server, pulls the latest code, and rebuilds the containers, with no manual intervention required.
