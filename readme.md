@@ -9,7 +9,7 @@ The original repository contained a deliberately misconfigured deployment setup.
 
 ## Live Application
 
-**Public IP:** [http://13.203.78.31/](http://13.203.78.31/)
+**Public IP:** [http://13.126.9.182/](http://13.126.9.182/)
 
 ---
 
